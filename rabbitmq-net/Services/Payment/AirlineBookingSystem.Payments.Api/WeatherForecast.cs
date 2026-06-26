@@ -1,4 +1,4 @@
-namespace AirlineBookingSystem.Payment.Api;
+namespace AirlineBookingSystem.Payments.Api;
 
 public class WeatherForecast
 {

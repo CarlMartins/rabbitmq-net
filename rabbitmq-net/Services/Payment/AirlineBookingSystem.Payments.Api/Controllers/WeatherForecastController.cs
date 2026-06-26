@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AirlineBookingSystem.Payment.Api.Controllers;
+namespace AirlineBookingSystem.Payments.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
