@@ -40,13 +40,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Notifi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Notifications.Infrastructure", "Services\Notification\AirlineBookingSystem.Notifications.Infrastructure\AirlineBookingSystem.Notifications.Infrastructure.csproj", "{28B12417-616A-4901-91CC-BF47B9B6E035}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Payment.Api", "Services\Payment\AirlineBookingSystem.Payment.Api\AirlineBookingSystem.Payment.Api.csproj", "{4EF9CEBA-7E9A-42AC-A522-EF2B90422483}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Payments.Api", "Services\Payment\AirlineBookingSystem.Payments.Api\AirlineBookingSystem.Payments.Api.csproj", "{4EF9CEBA-7E9A-42AC-A522-EF2B90422483}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Payment.Application", "Services\Payment\AirlineBookingSystem.Payment.Application\AirlineBookingSystem.Payment.Application.csproj", "{98B156E3-8582-4D79-99E0-65FEB959A321}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Payments.Application", "Services\Payment\AirlineBookingSystem.Payments.Application\AirlineBookingSystem.Payments.Application.csproj", "{98B156E3-8582-4D79-99E0-65FEB959A321}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Payment.Core", "Services\Payment\AirlineBookingSystem.Payment.Core\AirlineBookingSystem.Payment.Core.csproj", "{62BBEB71-3922-407C-8FA7-7FE9E6747CA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Payments.Core", "Services\Payment\AirlineBookingSystem.Payments.Core\AirlineBookingSystem.Payments.Core.csproj", "{62BBEB71-3922-407C-8FA7-7FE9E6747CA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Payment.Infrastructure", "Services\Payment\AirlineBookingSystem.Payment.Infrastructure\AirlineBookingSystem.Payment.Infrastructure.csproj", "{1E33430F-C27B-4B5E-AA2B-AFD047A9A0D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlineBookingSystem.Payments.Infrastructure", "Services\Payment\AirlineBookingSystem.Payments.Infrastructure\AirlineBookingSystem.Payments.Infrastructure.csproj", "{1E33430F-C27B-4B5E-AA2B-AFD047A9A0D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{CB09D82A-8BB8-4749-A709-0FD34E5D10D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseScripts", "BuildingBlocks\DatabaseScripts\DatabaseScripts.csproj", "{12335249-7565-4E5E-AF4E-5F834E3B260E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,6 +80,8 @@ Global
 		{98B156E3-8582-4D79-99E0-65FEB959A321} = {D4AD18CF-10CD-44B4-8030-27B612995ABD}
 		{62BBEB71-3922-407C-8FA7-7FE9E6747CA4} = {D4AD18CF-10CD-44B4-8030-27B612995ABD}
 		{1E33430F-C27B-4B5E-AA2B-AFD047A9A0D0} = {D4AD18CF-10CD-44B4-8030-27B612995ABD}
+		{CB09D82A-8BB8-4749-A709-0FD34E5D10D5} = {4E5C049A-E145-47D1-B656-81D8B01E30AE}
+		{12335249-7565-4E5E-AF4E-5F834E3B260E} = {CB09D82A-8BB8-4749-A709-0FD34E5D10D5}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C07175D7-2A4C-4624-A396-4CF4CE673CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -142,5 +148,9 @@ Global
 		{1E33430F-C27B-4B5E-AA2B-AFD047A9A0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E33430F-C27B-4B5E-AA2B-AFD047A9A0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E33430F-C27B-4B5E-AA2B-AFD047A9A0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12335249-7565-4E5E-AF4E-5F834E3B260E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12335249-7565-4E5E-AF4E-5F834E3B260E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12335249-7565-4E5E-AF4E-5F834E3B260E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12335249-7565-4E5E-AF4E-5F834E3B260E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
