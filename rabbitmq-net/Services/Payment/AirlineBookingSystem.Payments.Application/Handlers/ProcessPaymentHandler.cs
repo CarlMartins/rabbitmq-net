@@ -5,7 +5,7 @@ using MediatR;
 
 namespace AirlineBookingSystem.Payments.Application.Handlers;
 
-public class ProcessPaymentHandler : IRequestHandler<ProcessPaymentsCommand, Guid>
+public class ProcessPaymentHandler : IRequestHandler<ProcessPaymentCommand, Guid>
 {
     private readonly IPaymentRepository _paymentRepository;
 
@@ -14,7 +14,7 @@ public class ProcessPaymentHandler : IRequestHandler<ProcessPaymentsCommand, Gui
         _paymentRepository = paymentRepository;
     }
 
-    public async Task<Guid> Handle(ProcessPaymentsCommand request, CancellationToken cancellationToken)
+    public async Task<Guid> Handle(ProcessPaymentCommand request, CancellationToken cancellationToken)
     {
         var payment = new Payment
         {
