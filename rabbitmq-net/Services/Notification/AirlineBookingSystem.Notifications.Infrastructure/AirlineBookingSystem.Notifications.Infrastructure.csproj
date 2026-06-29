@@ -7,4 +7,12 @@
         <RootNamespace>ClassLibrary1aAirlineBookingSystem.Notifications.Infrastructure</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\AirlineBookingSystem.Notifications.Core\AirlineBookingSystem.Notifications.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.1.79" />
+    </ItemGroup>
+
 </Project>
