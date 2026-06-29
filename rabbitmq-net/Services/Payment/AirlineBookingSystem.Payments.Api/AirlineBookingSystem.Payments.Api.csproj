@@ -11,4 +11,13 @@
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.8"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\AirlineBookingSystem.Payments.Core\AirlineBookingSystem.Payments.Core.csproj"/>
+        <ProjectReference Include="..\AirlineBookingSystem.Payments.Infrastructure\AirlineBookingSystem.Payments.Infrastructure.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2"/>
+    </ItemGroup>
+
 </Project>
