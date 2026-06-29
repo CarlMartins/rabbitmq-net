@@ -7,4 +7,12 @@
         <RootNamespace>AirlineBookingSystem.Payments.Application</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="14.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AirlineBookingSystem.Payments.Core\AirlineBookingSystem.Payments.Core.csproj" />
+    </ItemGroup>
+
 </Project>
