@@ -1,4 +1,6 @@
 using System.Data;
+using System.Reflection;
+using AirlineBookingSystem.Bookings.Application.Handlers;
 using AirlineBookingSystem.Bookings.Core.Repositories;
 using AirlineBookingSystem.Bookings.Infrastructure.Repositories;
 using Microsoft.Data.SqlClient;
@@ -10,6 +12,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+var assemblies = new[]
+{
+    Assembly.GetExecutingAssembly(),
+    typeof(CreateBookingHandler).Assembly,
+    typeof(GetBookingHandler).Assembly
+};
+
+builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblies(assemblies));
 
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 
