@@ -1,7 +1,7 @@
 using AirlineBookingSystem.BuildingBlocks.Contracts.EventBus.Messages;
 using AirlineBookingSystem.Notifications.Application.Commands;
 using MassTransit;
-using MassTransit.Mediator;
+using MediatR;
 
 namespace AirlineBookingSystem.Notifications.Application.Consumers;
 
