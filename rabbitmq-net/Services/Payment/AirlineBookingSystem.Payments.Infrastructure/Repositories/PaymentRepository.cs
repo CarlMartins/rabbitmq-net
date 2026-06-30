@@ -16,15 +16,20 @@ public class PaymentRepository : IPaymentRepository
 
     public async Task ProcessPaymentAsync(Payment payment)
     {
-        const string query = "INSERT INTO Payments (Id, BookingId, Amount, PaymentDate) " +
-                             "VALUES (@Id, @BookingId, @Amount, @PaymentDate)";
+        const string query = """
+                             INSERT INTO "Payments" ("Id", "BookingId", "Amount", "PaymentDate")
+                             VALUES (@Id, @BookingId, @Amount, @PaymentDate)
+                             """;
         
         await _dbConnection.ExecuteAsync(query, payment);
     }
 
     public async Task RefundPaymentAsync(Guid id)
     {
-        const string query = "DELETE FROM Payments WHERE Id = @id";
+        const string query = """
+                             DELETE FROM "Payments"
+                             WHERE "Id" = @id
+                             """;
         
         await _dbConnection.ExecuteAsync(query, new { id });
     }
