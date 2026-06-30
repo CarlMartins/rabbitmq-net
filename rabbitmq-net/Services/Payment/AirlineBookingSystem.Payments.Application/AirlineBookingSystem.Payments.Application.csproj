@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>AirlineBookingSystem.Payments.Application</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MassTransit" Version="9.1.2" />
+      <PackageReference Include="MassTransit" Version="8.5.10" />
       <PackageReference Include="MediatR" Version="14.1.0" />
     </ItemGroup>
 
