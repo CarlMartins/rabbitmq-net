@@ -1,31 +1,36 @@
 using System.Data;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using AirlineBookingSystem.Bookings.Core.Entities;
 using AirlineBookingSystem.Bookings.Core.Repositories;
 using Dapper;
+using StackExchange.Redis;
 
 namespace AirlineBookingSystem.Bookings.Infrastructure.Repositories;
 
 public class BookingRepository : IBookingRepository
 {
-    private readonly IDbConnection _dbConnection;
+    private readonly IDatabase _redisDatabase;
+    private const string RedisKeyPrefix = "booking_";
 
-    public BookingRepository(IDbConnection dbConnection)
+    public BookingRepository(IConnectionMultiplexer redisConnection)
     {
-        _dbConnection = dbConnection;
+        _redisDatabase = redisConnection.GetDatabase();
     }
 
     public async Task<Booking?> GetBookingByIdAsync(Guid id)
     {
-        const string query = "SELECT * FROM Bookings WHERE Id = @Id";
-
-        return await _dbConnection.QueryFirstOrDefaultAsync<Booking>(query, new { Id = id });
+        var data = await _redisDatabase.StringGetAsync($"{RedisKeyPrefix}{id}");
+        
+        if (string.IsNullOrWhiteSpace(data))
+            return null;
+        
+        return JsonSerializer.Deserialize<Booking>(data!);
     }
 
     public async Task AddBookingAsync(Booking booking)
     {
-        const string query = "INSERT INTO Bookings(Id, FlightId, PassengerName, SeatNumber, BookingDate)" +
-                             "VALUES (@Id, @FlightId, @PassengerName, @SeatNumber, @BookingDate)";
-
-        await _dbConnection.ExecuteAsync(query, booking);
+        var data = JsonSerializer.Serialize(booking);
+        await _redisDatabase.StringSetAsync($"{RedisKeyPrefix}{booking.Id}", data);
     }
 }

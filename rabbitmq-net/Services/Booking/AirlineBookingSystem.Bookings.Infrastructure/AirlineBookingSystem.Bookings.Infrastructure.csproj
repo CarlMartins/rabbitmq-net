@@ -14,4 +14,10 @@
       <PackageReference Include="Dapper" Version="2.1.79" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="StackExchange.Redis">
+        <HintPath>..\..\..\..\..\..\..\..\..\..\..\home\carlosmartins\.nuget\packages\stackexchange.redis\3.0.11\lib\net8.0\StackExchange.Redis.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
